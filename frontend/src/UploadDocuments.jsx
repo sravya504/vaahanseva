@@ -124,7 +124,7 @@ const UploadDocuments = () => {
 
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/upload-docs",
+      "https://vaahanseva-backend02.onrender.com/api/upload-docs",
       formData,
       { headers: { "Content-Type": "multipart/form-data" } }
     );

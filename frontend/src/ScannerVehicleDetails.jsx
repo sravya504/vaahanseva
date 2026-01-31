@@ -72,7 +72,7 @@ const ScannerVehicleDetails = () => {
     const fetchVehicle = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/vehicle/${id}`
+          `https://vaahanseva-backend02.onrender.com/api/vehicle/${id}`
         );
         setVehicle(res.data);
       } catch (err) {

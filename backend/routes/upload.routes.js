@@ -49,7 +49,7 @@ router.post(
       // 4️⃣ Generate QR Code (vehicle ID is enough)
       // const qrData = `https://yourdomain.com/vehicle/${vehicle._id}`;
 
-const qrData = `http://localhost:5173/vehicle/${vehicle._id}`;
+const qrData = `https://vaahanseva.vercel.app/vehicle/${vehicle._id}`;
 
 
       const qrCode = await QRCode.toDataURL(qrData);
