@@ -1,0 +1,164 @@
+/* Theme Colors (same as home page) */
+$primary: #22d3ee;
+$dark-bg: #020617;
+$text-light: #e5e7eb;
+$text-muted: #94a3b8;
+
+/* Page Background */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(circle at top, rgba(2, 6, 23, 0.9), rgba(0, 0, 0, 0.95)),
+    url("/backg.png");
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* Glass Card */
+.glass-card {
+  width: 540px;
+  padding: 40px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 18px;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.15);
+
+  color: $text-light;
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+
+  p {
+    font-size: 14px;
+    color: $text-muted;
+    margin-bottom: 24px;
+  }
+
+  /* Form */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    /* Row for First + Last Name */
+    .field-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Single Field */
+    .field {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      flex: 1;
+
+      label {
+        font-size: 13px;
+        margin-bottom: 6px;
+        color: $text-muted;
+      }
+
+      input {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 12px 14px;
+        border-radius: 10px;
+
+        color: $text-light;
+        outline: none;
+        font-size: 14px;
+
+        &::placeholder {
+          color: rgba(229, 231, 235, 0.5);
+        }
+
+        &:focus {
+          border-color: $primary;
+          box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.25);
+        }
+      }
+    }
+
+    /* Button */
+    button {
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+
+      background: $primary;
+      color: #020617;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  /* Switch link (Login / Signup) */
+  .switch {
+    margin-top: 20px;
+    font-size: 14px;
+    color: $text-muted;
+
+    a {
+      color: $primary;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Responsive (Mobile) */
+@media (max-width: 480px) {
+  .glass-card
+   {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .field-row {
+    flex-direction: column;
+  }
+}
+
+
+
+/* Bottom login message */
+.login-message-bottom {
+  margin-top: 28px;   /* 👈 THIS creates visible gap */
+  padding-top: 6px;   /* extra breathing room */
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+
+/* Success message */
+.login-message-bottom.success {
+  color: #22c55e; /* green */
+}
+
+/* Error message */
+.login-message-bottom.error {
+  color: #ef4444; /* red */
+}

@@ -1,0 +1,148 @@
+$primary: #22d3ee;
+$bg-dark: #020617;
+$text-light: #e5e7eb;
+$text-muted: #94a3b8;
+
+.how-it-works {
+  padding: 100px 20px;
+  background: radial-gradient(circle at top, #020617, #000);
+  color: $text-light;
+  text-align: center;
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    margin-top: 10px;
+    font-size:1.5rem;
+    color: $text-muted;
+  }
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 80px auto 0;
+}
+
+.center-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 90%;
+  background: linear-gradient(to bottom, transparent, $primary, transparent);
+  transform: translateX(-50%);
+}
+
+/* ===== ITEM ===== */
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 120px;
+  opacity: 0;
+  transition: all 0.8s ease;
+
+  &.left {
+    justify-content: flex-end;
+    transform: translateX(-80px);
+
+    .content {
+      text-align: right;
+      margin-right: 60px;
+    }
+  }
+
+  &.right {
+    justify-content: flex-start;
+    transform: translateX(80px);
+
+    .content {
+      text-align: left;
+      margin-left: 60px;
+    }
+  }
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== CONTENT ===== */
+.content {
+  max-width: 360px;
+
+  h3 {
+    margin-top: 14px;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: $text-muted;
+    line-height: 1.6;
+  }
+}
+
+/* ===== ICON ===== */
+.icon-box {
+  width: 56px;
+  height: 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: white;
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.5);
+}
+
+/* ===== STEP CIRCLE ===== */
+.step-number {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: $bg-dark;
+  border: 2px solid $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $primary;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .center-line {
+    left: 20px;
+  }
+
+  .timeline-item {
+    justify-content: flex-start !important;
+    transform: translateY(40px) !important;
+
+    &.show {
+      transform: translateY(0) !important;
+    }
+
+    .content {
+      margin-left: 60px !important;
+      text-align: left !important;
+    }
+  }
+
+  .step-number {
+    left: 20px;
+    transform: none;
+  }
+}

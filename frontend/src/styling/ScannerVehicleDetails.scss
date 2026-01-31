@@ -1,0 +1,90 @@
+.scanner-card {
+  width: 750px;
+  text-align: left;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 24px;
+  }
+}
+
+/* Vehicle info */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+
+  div {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 14px;
+
+    span {
+      display: block;
+      font-size: 12px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+/* Documents */
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.doc-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+
+  p {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  img {
+    width: 100%;
+    max-height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  a {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(34, 211, 238, 0.2);
+    color: #22d3ee;
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .scanner-card {
+    width: 90%;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
