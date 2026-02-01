@@ -104,19 +104,22 @@ const ScannerVehicleDetails = () => {
         <h3>Documents</h3>
 
         <div className="docs-grid">
-          {Object.entries(vehicle.documents).map(([key, url]) => (
-            <div className="doc-card" key={key}>
-              <p>{key.toUpperCase()}</p>
+        {Object.entries(vehicle.documents).map(([key, url]) => (
+  <div className="doc-card" key={key}>
+    <p>{key.toUpperCase()}</p>
 
-              {url.endsWith(".pdf") ? (
-                <a href={url} target="_blank" rel="noreferrer">
-                  View PDF
-                </a>
-              ) : (
-                <img src={url} alt={key} />
-              )}
-            </div>
-          ))}
+    {url.endsWith(".pdf") ? (
+      <a href={url} target="_blank" rel="noreferrer">
+        View PDF
+      </a>
+    ) : (
+      <a href={url} target="_blank" rel="noreferrer">
+        <img src={url} alt={key} />
+      </a>
+    )}
+  </div>
+))}
+
         </div>
       </div>
     </div>
