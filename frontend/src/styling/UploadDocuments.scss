@@ -130,3 +130,119 @@ $text-muted: #94a3b8;
 
 
 
+
+
+.upload-docs {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #0f172a;
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================= TITLE ================= */
+.upload-docs h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #94a3b8;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* ================= FORM ================= */
+.upload-form {
+  width: 100%;
+  max-width: 700px;
+  background: #020617;
+  padding: 30px;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* ================= FORM GROUP ================= */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* ================= FILE INPUT ================= */
+.form-group.file {
+  grid-column: 1 / -1;
+}
+
+.form-group.file input {
+  padding: 10px;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* ================= BUTTON ================= */
+.btn-submit {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  background: #22d3ee;
+  color: #020617;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ================= QR ================= */
+.qr-code {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.qr-code img {
+  width: 220px;
+  margin-bottom: 16px;
+}
+
+/* ================= MOBILE – SMALL SPACING FIX ================= */
+@media (max-width: 768px) {
+  .upload-docs {
+    padding: 24px 16px;
+  }
+
+  .upload-form {
+    padding: 22px;
+    gap: 14px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 10px;
+  }
+
+  .btn-submit {
+    padding: 14px;
+  }
+}

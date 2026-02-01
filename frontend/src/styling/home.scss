@@ -198,3 +198,143 @@ footer {
 }
 
 
+$primary: #22d3ee;
+$dark-bg: #020617;
+$text-light: #e5e7eb;
+$text-muted: #94a3b8;
+
+/* ================= HOME ================= */
+.home {
+  position: relative;
+  min-height: 100vh;
+  color: $text-light;
+  overflow: hidden;
+}
+
+/* Background image */
+.home::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("../assets/backg4.jpg") center / cover no-repeat;
+  z-index: 0;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(10px);
+
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: $primary;
+
+    .icon {
+      margin-right: 6px;
+    }
+  }
+
+  .menu a {
+    margin: 0 14px;
+    color: $text-muted;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .nav-buttons {
+    display: flex;
+    gap: 12px;
+  }
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary {
+  background: $primary;
+  color: #020617;
+  padding: 15px 40px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 80px 20px;
+
+  h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    max-width: 700px;
+    margin: auto;
+    color: $text-muted;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+/* Generate button spacing */
+.generate-btn {
+  margin-top: 160px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= MOBILE (SMALL FIXES ONLY) ================= */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero h3 {
+    font-size: 18px;
+  }
+
+  .hero p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .generate-btn {
+    margin-top: 60px;
+  }
+
+  .navbar {
+    padding: 14px 20px;
+  }
+}
