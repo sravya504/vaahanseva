@@ -338,3 +338,60 @@ footer {
     padding: 14px 20px;
   }
 }
+
+
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .menu a {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .nav-buttons {
+    margin-top: 6px;
+  }
+
+  .btn-primary {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 18px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero h3 {
+    font-size: 17px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .generate-btn {
+    margin-top: 60px;
+  }
+}
