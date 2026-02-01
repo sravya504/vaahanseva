@@ -31,18 +31,24 @@ $text-muted: #94a3b8;
   width: 100%;
   max-width: 700px;
   padding: 40px;
+  margin: auto;
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 
-  /* 🔮 GLASS EFFECT */
-  background: rgba(2, 6, 23, 0.65);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-radius: 16px;
-  border: 1px solid rgba(34, 211, 238, 0.18);
-  box-shadow: 0 0 28px rgba(34, 211, 238, 0.12);
+  /* ✅ EXACT SAME GLASS AS login.scss */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 18px;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.15);
+
+  color: #e5e7eb;
 }
+
 
 /* FULL WIDTH */
 .form-group.file,
