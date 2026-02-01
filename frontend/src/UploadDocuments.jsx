@@ -83,9 +83,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./styling/UploadDocuments.scss";
-import { useNavigate } from "react-router-dom";
-const navigate = useNavigate();
-
 
 const UploadDocuments = () => {
   // Vehicle info state
@@ -141,23 +138,6 @@ const UploadDocuments = () => {
     setLoading(false); // 👈 stop loading ALWAYS
   }
 };
-
-
-const shareOnWhatsApp = () => {
-  const message = `Scan this QR to view vehicle documents:\n${qrCode}`;
-  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
-  window.open(whatsappUrl, "_blank");
-};
-
-const handleWhatsAppClick = () => {
-  navigate("/login-upload", {
-    state: {
-      from: "/upload-documents",
-      qrCode: qrCode
-    }
-  });
-};
-
 
   return (
     <section className="upload-docs">
@@ -249,21 +229,12 @@ const handleWhatsAppClick = () => {
       </form>
 
       {/* Show QR Code */}
-{qrCode && (
-  <div className="qr-code">
-    <h3>Scan this QR</h3>
-    <img src={qrCode} alt="QR Code" />
-
-    <button
-      className="btn-submit"
-      style={{ marginTop: "15px" }}
-      onClick={shareOnWhatsApp}
-    >
-      Share on WhatsApp
-    </button>
-  </div>
-)}
-
+      {qrCode && (
+        <div className="qr-code">
+          <h3>Scan this QR</h3>
+          <img src={qrCode} alt="QR Code" />
+        </div>
+      )}
     </section>
   );
 };
