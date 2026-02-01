@@ -139,6 +139,13 @@ const UploadDocuments = () => {
   }
 };
 
+const shareOnWhatsApp = () => {
+  const message = `Scan this QR to view vehicle documents:\n${qrCode}`;
+  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, "_blank");
+};
+
+
   return (
     <section className="upload-docs">
       <h2>Upload Vehicle Documents</h2>
@@ -230,11 +237,20 @@ const UploadDocuments = () => {
 
       {/* Show QR Code */}
       {qrCode && (
-        <div className="qr-code">
-          <h3>Scan this QR</h3>
-          <img src={qrCode} alt="QR Code" />
-        </div>
-      )}
+  <div className="qr-code">
+    <h3>Scan this QR</h3>
+    <img src={qrCode} alt="QR Code" />
+
+    <button
+      className="btn-submit"
+      style={{ marginTop: "15px" }}
+      onClick={shareOnWhatsApp}
+    >
+      Share on WhatsApp
+    </button>
+  </div>
+)}
+
     </section>
   );
 };
