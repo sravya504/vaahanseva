@@ -8,7 +8,7 @@ import Features from "./Features.jsx"
 import Steps from "./Steps.jsx"
 import UploadDocuments from './UploadDocuments.jsx'
 import ScannerVehicleDetails from "./ScannerVehicleDetails";
-
+import Login_upload from './Login_upload.jsx';
 const App = () => {
   return (
     <div>
@@ -21,7 +21,7 @@ const App = () => {
                 <Route path="/upload-documents" element={<UploadDocuments/>} />
                 <Route path="/signup" element={<Signup/>} />
                 <Route path="/vehicle/:id" element={<ScannerVehicleDetails/>} />
-
+                <Route path="/login-upload" element={<Login_upload/>} />
            </Routes>
      
     </div>
