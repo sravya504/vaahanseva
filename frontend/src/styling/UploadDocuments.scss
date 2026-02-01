@@ -3,10 +3,15 @@ $bg-dark: #020617;
 $text-light: #e5e7eb;
 $text-muted: #94a3b8;
 
+/* ================= PAGE ================= */
 .upload-docs {
+  min-height: 100vh;
   padding: 100px 20px;
   background: radial-gradient(circle at top, #020617, #000);
   color: $text-light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 
   h2 {
@@ -15,32 +20,37 @@ $text-muted: #94a3b8;
   }
 
   .subtitle {
+    font-size: 15px;
     color: $text-muted;
     margin-bottom: 40px;
   }
 }
 
-/* FORM */
+/* ================= FORM (GLASS – SAME DESKTOP) ================= */
 .upload-form {
+  width: 100%;
   max-width: 700px;
-  margin: auto;
   padding: 40px;
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
-  border: 1px solid rgba(34, 211, 238, 0.15);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+
+  /* 🔮 GLASS EFFECT */
+  background: rgba(2, 6, 23, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px;
+  border: 1px solid rgba(34, 211, 238, 0.18);
+  box-shadow: 0 0 28px rgba(34, 211, 238, 0.12);
 }
 
 /* FULL WIDTH */
-.upload-form .file,
-.upload-form button {
-  grid-column: span 2;
+.form-group.file,
+.btn-submit {
+  grid-column: 1 / -1;
 }
 
-/* INPUTS */
+/* ================= FORM GROUP ================= */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -56,8 +66,8 @@ $text-muted: #94a3b8;
   select {
     padding: 12px;
     border-radius: 8px;
-    background: rgba(2, 6, 23, 0.8);
-    border: 1px solid rgba(34, 211, 238, 0.2);
+    background: rgba(2, 6, 23, 0.85);
+    border: 1px solid rgba(34, 211, 238, 0.22);
     color: $text-light;
     outline: none;
 
@@ -68,11 +78,11 @@ $text-muted: #94a3b8;
   }
 
   input[type="file"] {
-    padding: 8px;
+    padding: 10px;
   }
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 .btn-submit {
   margin-top: 20px;
   padding: 14px;
@@ -80,7 +90,7 @@ $text-muted: #94a3b8;
   border: none;
   background: linear-gradient(135deg, #22d3ee, #0ea5e9);
   color: #020617;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: 0.3s;
 
@@ -90,183 +100,39 @@ $text-muted: #94a3b8;
   }
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .upload-form {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
-
-.qr-code {
-  text-align: center;        // center everything inside
-  margin-top: 20px;
-
-  img {
-    width: 200px;            // set QR size
-    height: 200px;
-    display: block;
-    margin: 0 auto 15px;     // center and add spacing below
-  }
-
-  button {
-    display: inline-block;   // center horizontally
-    padding: 10px 20px;
-    background-color: #00c2ff; 
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-
-    &:hover {
-      background-color: #0096cc;
-    }
-  }
-}
-
-
-
-
-
-.upload-docs {
-  min-height: 100vh;
-  padding: 40px 20px;
-  background: #0f172a;
-  color: #e5e7eb;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* ================= TITLE ================= */
-.upload-docs h2 {
-  font-size: 26px;
-  margin-bottom: 8px;
-}
-
-.subtitle {
-  font-size: 15px;
-  color: #94a3b8;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-/* ================= FORM ================= */
-.upload-form {
-  width: 100%;
-  max-width: 700px;
-  padding: 30px;
-  border-radius: 14px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-
-  /* 🔮 GLASS EFFECT */
-  background: rgba(2, 6, 23, 0.65);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-}
-
-
-/* ================= FORM GROUP ================= */
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-.form-group input,
-.form-group select {
-  padding: 12px;
-  font-size: 14px;
-  border-radius: 8px;
-  border: none;
-}
-
-/* ================= FILE INPUT ================= */
-.form-group.file {
-  grid-column: 1 / -1;
-}
-
-.form-group.file input {
-  padding: 10px;
-  background: #020617;
-  color: #e5e7eb;
-}
-
-/* ================= BUTTON ================= */
-.btn-submit {
-  grid-column: 1 / -1;
-  margin-top: 20px;
-  padding: 14px;
-  font-size: 16px;
-  font-weight: 700;
-  background: #22d3ee;
-  color: #020617;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
 /* ================= QR ================= */
 .qr-code {
   margin-top: 40px;
   text-align: center;
-}
 
-.qr-code img {
-  width: 220px;
-  margin-bottom: 16px;
-}
-
-/* ================= MOBILE – SMALL SPACING FIX ================= */
-@media (max-width: 768px) {
-  .upload-docs {
-    padding: 24px 16px;
+  img {
+    width: 220px;
+    height: 220px;
+    display: block;
+    margin: 0 auto 16px;
   }
 
+  button {
+    padding: 10px 22px;
+    background: #00c2ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #0096cc;
+    }
+  }
+}
+
+/* ================= MOBILE (NO DESKTOP CHANGE) ================= */
+@media (max-width: 600px) {
   .upload-form {
-    padding: 22px;
-    gap: 14px;
-  }
-
-  .form-group label {
-    font-size: 13px;
-  }
-
-  .form-group input,
-  .form-group select {
-    padding: 10px;
-  }
-
-  .btn-submit {
-    padding: 14px;
-  }
-}
-
-
-
-@media (max-width: 768px) {
-  html,
-  body {
-    background: #0f172a;
-  }
-
-  .upload-docs {
-    padding: 24px 14px;
-  }
-
-  .upload-form {
-    margin: 0 auto;
+    grid-template-columns: 1fr;
+    padding: 26px;
+    gap: 16px;
   }
 }
