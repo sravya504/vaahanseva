@@ -96,3 +96,34 @@ $text-muted: #94a3b8;
     grid-template-columns: 1fr;
   }
 }
+
+
+
+
+.qr-code {
+  text-align: center;        // center everything inside
+  margin-top: 20px;
+
+  img {
+    width: 200px;            // set QR size
+    height: 200px;
+    display: block;
+    margin: 0 auto 15px;     // center and add spacing below
+  }
+
+  button {
+    display: inline-block;   // center horizontally
+    padding: 10px 20px;
+    background-color: #00c2ff; 
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #0096cc;
+    }
+  }
+}
