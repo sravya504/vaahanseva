@@ -133,142 +133,95 @@ $text-muted: #94a3b8;
 
 .upload-docs {
   min-height: 100vh;
-  padding: 2.5rem 1rem;
+  padding: 16px;
   background: #0f172a;
   color: #e5e7eb;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.4rem;
-    text-align: center;
-  }
+/* ================= TITLE ================= */
+.upload-docs h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  text-align: center;
+}
 
-  .subtitle {
-    font-size: 0.95rem;
-    color: #94a3b8;
-    text-align: center;
-    margin-bottom: 2rem;
-    max-width: 600px;
-  }
+.upload-docs .subtitle {
+  font-size: 14px;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* ================= FORM ================= */
 .upload-form {
   width: 100%;
-  max-width: 600px;
-  background: rgba(2, 6, 23, 0.9);
-  padding: 1.8rem;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  max-width: 520px;
+  background: #020617;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;              /* 🔥 CHANGE */
+  flex-direction: column;     /* 🔥 FORCE SINGLE COLUMN */
+  gap: 14px;
 }
 
+/* ================= FORM GROUP ================= */
 .form-group {
+  width: 100%;
   display: flex;
   flex-direction: column;
-
-  label {
-    font-size: 0.85rem;
-    margin-bottom: 6px;
-    color: #cbd5f5;
-  }
-
-  input,
-  select {
-    padding: 11px 12px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    font-size: 0.9rem;
-  }
 }
 
-/* File inputs span full width */
-.form-group.file {
-  grid-column: 1 / -1;
+.form-group label {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
 
-  input {
-    padding: 8px;
-    background: #020617;
-    color: #e5e7eb;
-  }
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* ================= FILE INPUT ================= */
+.form-group.file input {
+  padding: 8px;
+  background: #020617;
+  color: #e5e7eb;
 }
 
 /* ================= BUTTON ================= */
 .btn-submit {
-  grid-column: 1 / -1;
-  margin-top: 1rem;
+  width: 100%;
   padding: 14px;
-  font-size: 1rem;
+  font-size: 15px;
   font-weight: 700;
   background: #22d3ee;
   color: #020617;
   border: none;
   border-radius: 10px;
-  cursor: pointer;
-
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
+  margin-top: 8px;
 }
 
-/* ================= QR SECTION ================= */
+/* ================= QR ================= */
 .qr-code {
-  margin-top: 2.5rem;
+  margin-top: 24px;
   text-align: center;
-
-  h3 {
-    margin-bottom: 1rem;
-  }
-
-  img {
-    width: 200px;
-    max-width: 90%;
-    margin-bottom: 1rem;
-  }
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .upload-form {
-    grid-template-columns: 1fr;
-    padding: 1.4rem;
-  }
-
-  .form-group.file {
-    grid-column: auto;
-  }
-
-  .btn-submit {
-    font-size: 0.95rem;
-  }
+.qr-code img {
+  width: 180px;
+  max-width: 100%;
 }
 
-/* ================= SMALL MOBILE ================= */
-@media (max-width: 480px) {
-  .upload-docs {
-    padding: 2rem 0.8rem;
-
-    h2 {
-      font-size: 1.5rem;
-    }
-
-    .subtitle {
-      font-size: 0.85rem;
-    }
-  }
-
+/* ================= TABLET ================= */
+@media (min-width: 768px) {
   .upload-form {
-    padding: 1.2rem;
-  }
-
-  .qr-code img {
-    width: 170px;
+    max-width: 600px;
   }
 }
