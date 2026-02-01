@@ -139,10 +139,17 @@ const UploadDocuments = () => {
   }
 };
 
-const shareOnWhatsApp = () => {
-  const message = `Scan this QR to view vehicle documents:\n${qrCode}`;
-  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
-  window.open(whatsappUrl, "_blank");
+// const shareOnWhatsApp = () => {
+//   const message = `Scan this QR to view vehicle documents:\n${qrCode}`;
+//   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+//   window.open(whatsappUrl, "_blank");
+// };
+
+const downloadQr = () => {
+  const link = document.createElement("a");
+  link.href = qrCode; // base64 image
+  link.download = `${vehicleNumber}_QR.png`; // file name
+  link.click();
 };
 
 
@@ -235,21 +242,17 @@ const shareOnWhatsApp = () => {
 
       </form>
 
-      {/* Show QR Code */}
       {qrCode && (
   <div className="qr-code">
     <h3>Scan this QR</h3>
     <img src={qrCode} alt="QR Code" />
 
-    <button
-      className="btn-submit"
-      style={{ marginTop: "15px" }}
-      onClick={shareOnWhatsApp}
-    >
-      Share on WhatsApp
+    <button className="btn-submit" onClick={downloadQr}>
+      Download QR
     </button>
   </div>
 )}
+
 
     </section>
   );
