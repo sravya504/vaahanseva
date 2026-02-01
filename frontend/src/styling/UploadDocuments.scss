@@ -137,8 +137,20 @@ $text-muted: #94a3b8;
 /* ================= MOBILE (NO DESKTOP CHANGE) ================= */
 @media (max-width: 600px) {
   .upload-form {
-    grid-template-columns: 1fr;
-    padding: 26px;
-    gap: 16px;
+    grid-template-columns: 1fr;   /* ✅ single column */
+    padding: 24px;               /* ✅ less padding */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* file + button stay full width */
+  .upload-form .file,
+  .upload-form button {
+    grid-column: 1 / -1;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 100%;
   }
 }
