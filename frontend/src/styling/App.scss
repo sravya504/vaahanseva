@@ -21,3 +21,15 @@
   position: relative;
   z-index: 2;
 }
+
+
+#tsparticles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.app-root > * {
+  position: relative;
+  z-index: 2;
+}
