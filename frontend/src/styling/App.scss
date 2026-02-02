@@ -6,11 +6,11 @@
 }
 
 /* Particles layer */
-#tsparticles {
-  position: fixed !important;
-  inset: 0;
-  z-index: 0;
-}
+// #tsparticles {
+//   position: fixed !important;
+//   inset: 0;
+//   z-index: 0;
+// }
 
 /* All pages content above particles */
 .page,
@@ -32,4 +32,11 @@
 .app-root > * {
   position: relative;
   z-index: 2;
+}
+
+#tsparticles {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
 }
