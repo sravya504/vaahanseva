@@ -1,6 +1,5 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-//import Signup from "./Signup.jsx" ;
 import Home from "./Home.jsx"
 import Login from "./Login.jsx"
 import Signup from "./Signup.jsx"
@@ -8,11 +7,12 @@ import Features from "./Features.jsx"
 import Steps from "./Steps.jsx"
 import UploadDocuments from './UploadDocuments.jsx'
 import ScannerVehicleDetails from "./ScannerVehicleDetails";
-
+import ParticlesBackground from './ParticlesBackground.jsx';
+import "./styling/App.scss";
 const App = () => {
   return (
-    <div>
-      
+    <div className="app-root">
+      <ParticlesBackground />
            <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/login" element={<Login/>} />

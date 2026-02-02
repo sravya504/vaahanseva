@@ -1,0 +1,23 @@
+.app-root {
+  position: relative;
+  min-height: 100vh;
+  background: #020617; // fallback
+  overflow-x: hidden;
+}
+
+/* Particles layer */
+#tsparticles {
+  position: fixed !important;
+  inset: 0;
+  z-index: 0;
+}
+
+/* All pages content above particles */
+.page,
+.upload-docs,
+.home,
+.login,
+.signup {
+  position: relative;
+  z-index: 2;
+}
