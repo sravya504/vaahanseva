@@ -126,7 +126,7 @@ const UploadDocuments = () => {
     const res = await axios.post(
       "https://vaahanseva-backend02.onrender.com/api/upload-docs",
       formData,
-      { headers: { "Content-Type": "multipart/form-data" } }
+      { headers: { "Content-Type": "multipart/form-data" },  timeout: 60000, }
     );
 
     if (res.data.success) {

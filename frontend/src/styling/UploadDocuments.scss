@@ -154,3 +154,15 @@ $text-muted: #94a3b8;
     width: 100%;
   }
 }
+
+
+@media (max-width: 600px) {
+  .qr-code img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .qr-code {
+    margin-bottom: 60px; // 👈 prevent cut-off
+  }
+}
