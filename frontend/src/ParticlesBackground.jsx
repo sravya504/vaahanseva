@@ -15,7 +15,7 @@ const ParticlesBackground = () => {
 
         particles: {
           number: {
-            value: window.innerWidth < 768 ? 30 : 60,
+            value: window.innerWidth < 768 ? 20 : 40,
             density: {
               enable: true,
               area: 800,
@@ -31,11 +31,11 @@ const ParticlesBackground = () => {
           },
 
           opacity: {
-            value: 0.5,
+            value: 0.35,
           },
 
           size: {
-            value: { min: 2, max: 5 },
+            value: { min: 1, max: 3 },
           },
 
           move: {
