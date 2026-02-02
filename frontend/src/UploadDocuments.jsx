@@ -162,16 +162,21 @@ const downloadQr = () => {
 
       <form className="upload-form" onSubmit={handleSubmit}>
         {/* Vehicle Info */}
-        <div className="form-group">
-          <label>Vehicle Number</label>
-          <input
-            type="text"
-            value={vehicleNumber}
-            onChange={(e) => setVehicleNumber(e.target.value)}
-            placeholder="AP 09 AB 1234"
-            required
-          />
-        </div>
+       <div className="form-group">
+  <label>Vehicle Number</label>
+  <input
+    type="text"
+    value={vehicleNumber}
+    onChange={(e) =>
+      setVehicleNumber(e.target.value.toUpperCase())
+    }
+    placeholder="AP 09 AB 1234"
+    pattern="^[A-Z]{2}\s?\d{2}\s?[A-Z]{2}\s?\d{4}$"
+    title="Enter valid vehicle number (Example: AP 09 AB 1234)"
+    required
+  />
+</div>
+
 
         <div className="form-group">
           <label>Vehicle Type</label>
@@ -193,16 +198,23 @@ const downloadQr = () => {
           />
         </div>
 
+        
         <div className="form-group">
-          <label>Mobile Number</label>
-          <input
-            type="tel"
-            value={mobile}
-            onChange={(e) => setMobile(e.target.value)}
-            placeholder="Enter mobile number"
-            required
-          />
-        </div>
+  <label>Mobile Number</label>
+  <input
+    type="tel"
+    value={mobile}
+    onChange={(e) => {
+      const value = e.target.value.replace(/\D/g, "");
+      if (value.length <= 10) setMobile(value);
+    }}
+    placeholder="Enter 10 digit mobile number"
+    pattern="^[0-9]{10}$"
+    title="Mobile number must be exactly 10 digits"
+    required
+  />
+</div>
+
 
         {/* Document Uploads */}
         <div className="form-group file">
