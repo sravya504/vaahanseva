@@ -2,19 +2,20 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
 const ParticlesBackground = () => {
-  const particlesInit = async (main) => {
-    await loadFull(main);
+  const particlesInit = async (engine) => {
+    await loadFull(engine);
   };
 
   return (
     <Particles
+      id="tsparticles"
       init={particlesInit}
       options={{
         fullScreen: { enable: true },
 
         particles: {
           number: {
-            value: window.innerWidth < 768 ? 30 : 60, // 👈 HERE
+            value: window.innerWidth < 768 ? 30 : 60,
             density: {
               enable: true,
               area: 800,
@@ -39,7 +40,7 @@ const ParticlesBackground = () => {
 
           move: {
             enable: true,
-            speed: 0.8, // 👈 HERE
+            speed: 0.8,
             direction: "none",
             random: true,
             straight: false,
