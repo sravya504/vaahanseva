@@ -15,7 +15,7 @@ const ParticlesBackground = () => {
 
         particles: {
           number: {
-            value: window.innerWidth < 768 ? 20 : 40,
+            value: window.innerWidth < 768 ? 30 : 45,
             density: {
               enable: true,
               area: 800,
