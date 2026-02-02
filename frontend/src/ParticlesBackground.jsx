@@ -35,7 +35,7 @@ const ParticlesBackground = () => {
           },
 
           size: {
-            value: { min: 1, max: 2},
+            value: { min: 2, max: 4},
           },
 
           move: {
